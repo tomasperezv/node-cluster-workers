@@ -1,0 +1,26 @@
+{
+  "name": "node-cluster-workers",
+  "version": "1.0.0",
+  "description": "A wrapper on top of cluster to abstract parallel computation.",
+  "main": "./lib/workers.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasperezv/node-cluster-workers.git"
+  },
+  "keywords": [
+    "cluster",
+    "threads"
+  ],
+  "author": "Tomas Perez <tom@0x101.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasperezv/node-cluster-workers/issues"
+  },
+  "homepage": "https://github.com/tomasperezv/node-cluster-workers"
+}
