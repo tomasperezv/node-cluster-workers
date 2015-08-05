@@ -30,7 +30,8 @@ var workers = new Workers();
 workers.init(job, merge);
 workers.process([1, 2, 3, 4]).ready(function(result) {
   console.log('The result is ' + result);
-});```
+});
+```
 
 Author
 ----------
