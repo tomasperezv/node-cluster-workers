@@ -8,7 +8,7 @@ var Workers = require('../lib/workers');
 // Defines the job that is performed,
 // individually by each worker
 var job = function(data) {
-  return data[0];
+  return data;
 };
 
 // Defines the operation that merges data

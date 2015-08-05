@@ -14,7 +14,7 @@ var Workers = require('../lib/workers');
 // Defines the job that is performed,
 // individually by each worker
 var job = function(data) {
-  return data[0];
+  return data;
 };
 
 // Defines the operation that merges data
@@ -30,5 +30,16 @@ var workers = new Workers();
 workers.init(job, merge);
 workers.process([1, 2, 3, 4]).ready(function(result) {
   console.log('The result is ' + result);
-});
-```
+});```
+
+Author
+----------
+Tomas Perez - tom@0x101.com
+
+http://www.tomasperez.com
+
+License
+-----------
+Public Domain.
+
+No warranty expressed or implied. Use at your own risk.
