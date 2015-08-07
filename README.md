@@ -9,27 +9,46 @@ A wrapper on top of cluster to abstract parallel computation for divide and conq
  * each operation is performed in a separate worker
  * thread.
  */
-var Workers = require('../lib/workers');
+var Job = require('../lib/job');
 
-// Defines the job that is performed,
-// individually by each worker
-var job = function(data) {
+/**
+ * @constructor
+ */
+var SumJob = function() {
+  Job.call(this);
+};
+
+SumJob.prototype = new Job();
+
+/**
+ * Defines the job that is performed,
+ * individually by each worker.
+ *
+ * @method run
+ * @param {Array} data
+ */
+SumJob.prototype.subproblem = function(data) {
   return data;
 };
 
-// Defines the operation that merges data
-// whenever a worker finishes
-var merge = function(current, previous) {
+/**
+ * Defines the operation that merges data
+ * whenever a subproblem is completed.
+ *
+ * @param {Array} current
+ * @param {Array} previous
+ */
+SumJob.prototype.merge = function(current, previous) {
   if (typeof previous === 'undefined') {
     previous = 0;
   }
   return current + previous;
 };
 
-var workers = new Workers();
-workers.init(job, merge);
-workers.process([1, 2, 3, 4]).ready(function(result) {
-  console.log('The result is ' + result);
+// Instantiates the job object and solves an example
+var sumjob = new SumJob();
+sumjob.run([1, 2, 3, 4, 5]).ready(function(result) {
+  console.log('the result is ' + result);
 });
 ```
 
