@@ -10,7 +10,7 @@ var Job = require('../lib/job');
 // each operation is performed in a separate worker
 // thread.
 new Job()
-  // The problem to solve with its input data
+  // The input data
   .input([1, 2, 3, 4, 5])
   // Defines the job that is performed,
   // individually by each worker.
