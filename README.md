@@ -29,7 +29,8 @@ new Job()
   // run.
   .done(function(result) {
     console.log('the result is ' + result);
-  });```
+  });
+```
 
 Author
 ----------
